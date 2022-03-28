@@ -38,12 +38,14 @@ const Navbar = () => {
       }
       {
         toggleMenu && (
-          <ul>
+          <ul className='z-10 fixed top-0 -right-2 p-3 w-[70vw] h-screen shadow-2xl md:hidden list-none 
+          flex flex-col justify-start items-end rounded-md blue-glassmorphism text-white animate-slide-in'
+          >
             <li className='text-xl w-full my-2'>
-              <AiOutlineClose fontSize={28} className="text-white md:hidden cursor-pointer" onClick={() => settoggleMenu(false)} />
+              <AiOutlineClose fontSize={28} className="md:hidden cursor-pointer" onClick={() => settoggleMenu(false)} />
             </li>
             {["Market", "Exchange", "Tutorials", "Wallets"].map((items, key) => (
-              <NavbarItems title={items} key={key} classProps="my-2 text-lg" />
+              <NavbarItems title={items} key={key} classProps="my-2 text-lg text-white" />
             ))}
           </ul>
         )
