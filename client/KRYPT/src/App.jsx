@@ -12,7 +12,7 @@ const App = () => {
       <Transactions />
       <Services />
       <Footer />
-      <Loader />
+      {/* <Loader /> */}
     </div>
   )
 }

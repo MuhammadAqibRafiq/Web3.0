@@ -3,6 +3,7 @@ import { AiFillPlayCircle } from "react-icons/ai";
 import { SiEthereum } from "react-icons/si";
 import { BsInfoCircle } from "react-icons/bs";
 
+
 import Loader from "../Loader/Loader"
 
 const companyCommonStyles = "min-h-[70px] sm:px-0 px-2 sm:min-w-[120px] flex justify-center items-center border-[0.5px] border-gray-400 text-sm font-light text-white";
@@ -12,6 +13,26 @@ const Welcome = () => {
   const connectWallet = () => {
 
   }
+
+  const Input = ({ placeholder, name, type, value, handleChange }) => (
+    <input
+      placeholder={placeholder}
+      type={type}
+      step="0.0001"
+      value={value}
+      onChange={(e) => handleChange(e, name)}
+      className="my-2 w-full rounded-sm p-2 outline-none bg-transparent text-white border-none text-sm white-glassmorphism"
+    />
+  );
+
+  const handleChange = () => {
+
+  }
+
+  const handleSubmit = () => {
+
+  }
+
   return (
     <div className='flex w-full justify-center items-center'>
 
@@ -70,12 +91,23 @@ const Welcome = () => {
           </div>
 
           <div className='p-5 w-full blue-glassmorphism'>
+            <Input placeholder='Address to' type="text" name="addressTo" handleChange={handleChange} />
+            <Input placeholder="Amount (ETH)" name="amount" type="number" handleChange={handleChange} />
+            <Input placeholder="Keyword (Gif)" name="keyword" type="text" handleChange={handleChange} />
+            <Input placeholder="Enter Message" name="message" type="text" handleChange={handleChange} />
 
+            <hr />
 
-
+            {false ?
+              <Loader />
+              :
+              <button onClick={handleSubmit} className="text-white w-full mt-2 border-[1px] p-2 border-[#3d4f7c] hover:bg-[#3d4f7c] rounded-full cursor-pointer">
+                Submit
+              </button>
+            }
           </div>
 
-          </div>
+        </div>
 
 
       </div>
